@@ -1,4 +1,4 @@
-```ansible
+```yaml
 ---
 - hosts: solr
   gather_facts: yes
