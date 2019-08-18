@@ -1,4 +1,4 @@
-```bash
+```ansible
 ---
 - hosts: solr
   gather_facts: yes
