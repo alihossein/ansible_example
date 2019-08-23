@@ -1,4 +1,4 @@
-``` ansible
+``` yaml
 --- # install and restart Nginx
 - hosts: solr
   gather_facts: yes
