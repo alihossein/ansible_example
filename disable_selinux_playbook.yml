@@ -1,0 +1,15 @@
+```yaml
+---
+
+- hosts: "{{hosts}}"
+  remote_user: root
+  become: yes
+  # become_method: sudo
+  name: disabled SELinux  Playbook
+  gather_facts: false
+  connection: ssh
+  tasks:
+      - name: Disable SELinux
+        selinux:
+          state: disabled
+          
