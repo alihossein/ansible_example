@@ -1,0 +1,52 @@
+ 
+---
+
+- hosts: "{{hosts}}"
+  remote_user: root
+  become: yes
+  # become_method: sudo
+  name: this is general os packages  playbook
+  gather_facts: false
+  connection: ssh
+  tasks:
+      - name: install the latest version of epel-release
+        yum:
+          name: epel-release
+          state: latest
+      - name: upgrade all packages
+        yum:
+          name: '*'
+          state: latest    
+      - name: install the latest version of psmisc
+        yum:
+          name: psmisc
+          state: latest
+      - name: install the latest version of telnet
+        yum:
+          name: telnet
+          state: latest
+      - name: install the latest version of htop
+        yum:
+          name: htop
+          state: latest
+      - name: install the latest version of lsof
+        yum:
+          name: lsof
+          state: latest
+      - name: install the latest version of gcc
+        yum:
+          name: gcc
+          state: latest
+      - name: install the latest version of openssl-devel
+        yum:
+          name: openssl-devel
+          state: latest      
+      - name: install the latest version of ntp
+        yum:
+          name: ntp
+          state: latest
+      - name: install the latest version of ntp
+        service:
+          name: ntpd
+          state: started
+          enabled: yes
